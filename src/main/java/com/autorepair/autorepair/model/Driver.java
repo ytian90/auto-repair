@@ -17,6 +17,7 @@ import javax.validation.constraints.Digits;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
+import org.springframework.core.style.ToStringCreator;
 
 import com.autorepair.autorepair.adapter.JacksonCustomDriverDeserializer;
 import com.autorepair.autorepair.adapter.JacksonCustomDriverSerializer;
@@ -120,7 +121,25 @@ public class Driver extends Person {
 
 	public void addVehicle(Vehicle vehicle) {
 		getVehiclesInternal().add(vehicle);
-		vehicle.setOwner(this);
+		vehicle.setDriver(this);
 	}
 	
+	public Vehicle getVehicle(String vin) {
+		return getVehicle(vin, false);
+	}
+
+	public Vehicle getVehicle(String vin, boolean ignoreNew) {
+		vin = vin.toLowerCase();
+		for (Vehicle vehicle : getVehiclesInternal()) {
+			//TODO:
+		}
+		return null;
+	}
+	
+	@Override
+	public String toString() {
+		return new ToStringCreator(this)
+				//TODO
+				.toString();
+	}
 }

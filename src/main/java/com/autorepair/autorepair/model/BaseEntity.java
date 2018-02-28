@@ -5,11 +5,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-/**
- * 
- * @author ytian
- *
- */
 @MappedSuperclass
 public class BaseEntity {
 	@Id
